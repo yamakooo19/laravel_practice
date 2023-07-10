@@ -57,7 +57,7 @@ Route::get('/', function () {
 //Route::getの働きとして、「HTMLコードをreturnする関数を用意すればそのままWebページが表示される」という仕組みを理解する。
 //実際に本格的なWebページを作る場合は別の方法で実装する。
 
-Route::get('/hello/{msg}', function ($msg) {
+Route::get('/hello/{msg?}', function ($msg = 'no message.') {
 
     $html = <<<EOF
     <html>
