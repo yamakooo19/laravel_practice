@@ -25,3 +25,9 @@ Route::get('/', function () {
 //view(テンプレート名)
 //view関数を使用して引数にテンプレートを指定すると、viewsフォルダのテンプレートファイルがレンダリングされて返されて、ブラウザに表示される仕組みになっている。
 //viewsフォルダ・・・resources/views
+
+Route::get('hello', function () {
+    return '<html><body><h1>Hello</h1><p>This is sample page</p></body></html>';
+});
+
+//returnで、HTMLのソースコードを直接返すことで、そのソースコードをそのままWebブラウザへ返す。
