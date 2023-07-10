@@ -32,27 +32,50 @@ Route::get('/', function () {
 
 //returnで、HTMLのソースコードを直接返すことで、そのソースコードをそのままWebブラウザへ返す。
 
-$html = <<<EOF
-<html>
-<head>
-<title>Hello</title>
-<style>
-body { font-size:16pt; color:#999; }
-h1 { font-size:100pt; text-align:right; color:#eee;
-    margin:-40px 0px -50px 0px; }
-</style>
-</head>
-<body>
-    <h1>Hello</h1>
-    <p>This is sample page.</p>
-    <p>これは、サンプルで作ったページです。</p>
-</body>
-</html>
-EOF;
+// $html = <<<EOF
+// <html>
+// <head>
+// <title>Hello</title>
+// <style>
+// body { font-size:16pt; color:#999; }
+// h1 { font-size:100pt; text-align:right; color:#eee;
+//     margin:-40px 0px -50px 0px; }
+// </style>
+// </head>
+// <body>
+//     <h1>Hello</h1>
+//     <p>This is sample page.</p>
+//     <p>これは、サンプルで作ったページです。</p>
+// </body>
+// </html>
+// EOF;
 
-Route::get('hello', function () use ($html) {
-    return $html;
-});
+// Route::get('hello', function () use ($html) {
+//     return $html;
+// });
 
 //Route::getの働きとして、「HTMLコードをreturnする関数を用意すればそのままWebページが表示される」という仕組みを理解する。
 //実際に本格的なWebページを作る場合は別の方法で実装する。
+
+Route::get('/hello/{msg}', function ($msg) {
+
+    $html = <<<EOF
+    <html>
+    <head>
+    <title>Hello</title>
+    <style>
+    body { font-size:16pt; color:#999; }
+    h1 { font-size:100pt; text-align:right; color:#eee;
+        margin:-40px 0px -50px 0px; }
+    </style>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <p>{$msg}</p>
+        <p>これは、サンプルで作ったページです。</p>
+    </body>
+    </html>
+    EOF;
+
+    return $html;
+});
