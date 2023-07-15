@@ -22,10 +22,16 @@
     <h1>Blade/Index</h1>
     <p>&#064;foreachディレクティブの例</p>
     <ol>
-        @foreach ($data as $item)
-            <li>{{ $item }}</li>
-        @endforeach
-    </ol>
+        @for ($i = 1; $i < 100; $i++)
+            @if ($i % 2 == 1)
+                @continue
+            @elseif ($i <= 10)
+                <i>No, {{ $i }}
+                @else
+                @break
+        @endif
+    @endfor
+</ol>
 </body>
 
 </html>
