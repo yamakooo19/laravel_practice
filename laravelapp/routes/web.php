@@ -20,4 +20,4 @@ Route::get('/', function () {
 //Route::get('hello', function(){
 //     return view('hello.index');
 // });
-Route::get('hello/{id?}', 'App\Http\Controllers\HelloController@index');
+Route::get('hello', 'App\Http\Controllers\HelloController@index');
