@@ -22,5 +22,5 @@ Route::get('/', function () {
 //     return view('hello.index');
 // });
 Route::get('hello', 'App\Http\Controllers\HelloController@index')
-    ->middleware(HelloMiddleware::class);
+    ->middleware('hello');
 // Route::post('hello', 'App\Http\Controllers\HelloController@post');
