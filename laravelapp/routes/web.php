@@ -21,5 +21,6 @@ Route::get('/', function () {
 //Route::get('hello', function(){
 //     return view('hello.index');
 // });
-Route::get('hello', 'App\Http\Controllers\HelloController@index');
+Route::get('hello', 'App\Http\Controllers\HelloController@index')
+    ->middleware('helo');
 // Route::post('hello', 'App\Http\Controllers\HelloController@post');
